@@ -14,7 +14,7 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
     List<Ogrenci> findAll();
 
     //Öğrenci tablosundaki kız öğrencileri listeleyin.
-    String QUESTION_2 = "SELECT * FROM ogrenci WHERE cinsiyet = 'K'";
+    String QUESTION_2 = "SELECT * FROM ogrenci WHERE cinsiyet ='K'";
     @Query(value = QUESTION_2, nativeQuery = true)
     List<Ogrenci> findGirls();
 
