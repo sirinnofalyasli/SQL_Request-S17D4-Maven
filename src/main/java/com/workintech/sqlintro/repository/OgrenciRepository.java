@@ -24,7 +24,7 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
     List<String> findAllClasses();
 
     //Öğrenci tablosunda, 10A sınıfında olan kız öğrencileri listeleyiniz.
-    String QUESTION_4 = "SELECT * FROM ogrenci WHERE cinsiyet='K' AND sinif='10A'";
+    String QUESTION_4 = "SELECT * FROM ogrenci WHERE cinsiyet ='K' AND sinif='10A'";
     @Query(value = QUESTION_4, nativeQuery = true)
     List<Ogrenci> find10AGirls();
 
@@ -39,7 +39,7 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
     List<Ogrenci> findStudentsAlphabetically();
 
     // 10A sınıfındaki öğrencileri okul numarasına göre azalan olarak sıralayınız.
-    String QUESTION_7 = "SELECT * FROM ogrenci WHERE sinif='10A' ORDER BY ogrno DESC";
+    String QUESTION_7 = "SELECT * FROM ogrenci WHERE sinif = '10A' ORDER BY ogrno DESC";
     @Query(value = QUESTION_7, nativeQuery = true)
     List<Ogrenci> find10AStudentsByOgrNo();
 
